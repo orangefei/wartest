@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: wartest-dev
+  namespace: dev
+  labels:
+    run: wartest-dev
+spec:
+  type: NodePort
+  ports:
+  - port: 8080
+    targetPort: 8080
+    protocol: TCP
+    nodePort: 31333
+  selector:
+    run: wartest-dev
+                 

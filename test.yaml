@@ -1,0 +1,15 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: wartest-dev
+  namespace: dev
+spec:
+  replicas:
+  template:
+    metadata:
+      labels:
+        run: wartest-dev
+    spec:
+      containers:
+      - name: wartest-test1
+        image: 10.193.1.33/test/wartest:tags_k8s_wartest_ci7
